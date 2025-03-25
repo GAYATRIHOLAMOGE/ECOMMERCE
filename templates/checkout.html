@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="checkout-container">
+    <h2 class="checkout-title">Checkout</h2>
+
+    <div class="checkout-summary">
+        <h3>Order Summary</h3>
+        {% if cart_items %}
+        <table class="checkout-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>${{ "%.2f"|format(item.price) }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ "%.2f"|format(item.price * item.quantity) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+        <div class="total-section">
+            <h3>Total Amount: ${{ "%.2f"|format(total_amount) }}</h3>
+        </div>
+        
+        <form id="checkoutForm" method="POST" action="{{ url_for('checkout') }}">
+            <h3>Payment Method</h3>
+            <div class="form-group">
+                <input type="radio" id="payment_cod" name="payment_method" value="cod" checked>
+                <label for="payment_cod">Cash on Delivery</label>
+            </div>
+            
+            <div class="checkout-actions">
+                <button type="button" onclick="placeOrder()" class="btn place-order-btn">Place Order</button>
+                <a href="{{ url_for('cart') }}" class="btn back-to-cart-btn">Back to Cart</a>
+            </div>
+        </form>
+        {% else %}
+        <p>Your cart is empty. <a href="{{ url_for('products') }}">Browse products</a> to add items.</p>
+        {% endif %}
+    </div>
+</div>
+<script>
+function placeOrder() {
+    // Create a hidden input to indicate this is a confirmed order
+    var confirmInput = document.createElement('input');
+    confirmInput.type = 'hidden';
+    confirmInput.name = 'order_confirmed';
+    confirmInput.value = 'true';
+    
+    // Add the hidden input to the form
+    document.getElementById('checkoutForm').appendChild(confirmInput);
+    
+    // Submit the form
+    document.getElementById('checkoutForm').submit();
+}
+</script>
+{% endblock %}

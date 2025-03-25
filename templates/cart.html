@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="cart-container">
+    <h2 class="cart-title">Your Shopping Cart</h2>
+    {% if cart_items %}
+<table class="cart-table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+            <th>Checkout Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>
+                <div class="product-in-cart">
+                    {% if item.image %}
+                    <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-product-img">
+                    {% endif %}
+                    <span>{{ item.name }}</span>
+                </div>
+            </td>
+            <td>{{ item.description }}</td>
+            <td>${{ "%.2f"|format(item.price) }}</td>
+            <td>
+                <form action="{{ url_for('update_cart_quantity', product_id=item.id) }}" method="POST">
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="quantity-input">
+                    <button type="submit" class="update-quantity-btn">Update</button>
+                </form>
+            </td>
+            <td>${{ "%.2f"|format(item.price * item.quantity) }}</td>
+            <td>
+                <a href="{{ url_for('remove_from_cart', product_id=item.id) }}" class="remove-btn">Remove</a>
+            </td>
+            <td>
+                <!-- {% if item.checkedout == True %}
+                <span class="checkout-status checked">Checked Out</span>
+                {% else %}
+                <span class="checkout-status not-checked">Not Checked Out</span>
+                {% endif %} -->
+                {{item.checkedout}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="cart-summary">
+    <h3>Total Amount: ${{ "%.2f"|format(total_amount) }}</h3>
+    <div class="cart-actions">
+        <a href="{{ url_for('products') }}" class="btn continue-btn">Continue Shopping</a>
+        <a href="{{ url_for('checkout') }}" class="btn checkout-btn">Proceed to Checkout</a>
+    </div>
+</div>
+{% else %}
+<p>Your cart is currently empty. <a href="{{ url_for('products') }}">Browse products</a> to add items to your cart!</p>
+{% endif %}
+</div>
+{% endblock %}

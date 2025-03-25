@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">{{ category }}</h2>
+    {% for item in all_products %}
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/mensfashion.jpg') }}" class="card-img-top" alt="Men's Fashion">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <a href="{{ url_for('product_detail', product_id=item.idproduct) }}" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

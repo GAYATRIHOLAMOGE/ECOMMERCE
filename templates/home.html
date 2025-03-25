@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center my-4">
+    <h1 class="display-4">Welcome to ShopSmart!</h1>
+    <p class="lead">Your one-stop shop for quality products at the best prices.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('products') }}" role="button">Shop Now</a>
+</div>
+
+<h3 class="text-center mb-4">Featured Products</h3>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename=product.image) }}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p><strong>Price: </strong> ${{ product.price }}</p>
+                <a href="{{ url_for('product_detail', product_id=product.idproduct) }}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

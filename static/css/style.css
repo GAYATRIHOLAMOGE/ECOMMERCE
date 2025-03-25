@@ -1,0 +1,661 @@
+/* General Body Styling */
+body {
+    background-color: lightblue;  /* Just for testing purposes */
+    
+    background-color: #f0f4f8;  /* Light background for modern feel */
+    font-family: 'Poppins', sans-serif;  /* Clean, modern font */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #008080;  /* Teal background */
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);  
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffcc00;  /* Golden hover effect */
+}
+
+/* Jumbotron Styling */
+.jumbotron {
+    background: linear-gradient(to right, #008080, #004d4d);  /* Teal gradient */
+    color: white;
+    padding: 60px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Card Styling */
+.card {
+    border: none;  
+    border-radius: 15px;  
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  
+}
+
+.card img {
+    width: 100%;
+    border-bottom: 3px solid #008080;  /* Accent line in teal */
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #008080;  /* Teal for a pop of color */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;  
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333333;  /* Dark gray footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #ffcc00;  /* Golden links in the footer */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    background-color: #030e0e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d4d;  /* Darker teal on hover */
+    cursor: pointer;
+}
+
+/* --- Products Page Styles --- */
+.products-container {
+    display: grid;  /* Create a grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Responsive columns */
+    gap: 20px;  /* Spacing between grid items */
+    padding: 20px;
+}
+
+.product-card {
+    border: none;  
+    border-radius: 15px;  
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  
+}
+
+.product-card img {
+    width: 100%;
+    border-bottom: 3px solid #008080;  /* Accent line for distinction */
+}
+
+.product-card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #008080;  /* Match your theme */
+}
+
+.product-card-text {
+    font-size: 1rem;
+    color: #555;  
+}
+
+.product-btn {
+    display: inline-block;
+    background-color: #008080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-btn:hover {
+    background-color: #004d4d;  /* Darker teal on hover */
+    cursor: pointer;
+}
+
+/* --- Login Page Styles --- */
+
+/* Centering the login form */
+/* General Styling for the Login Form */
+.login-container {
+    max-width: 400px;  /* Limit the form width */
+    margin: 50px auto;  /* Center the form on the page */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+.login-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #008080;  /* Teal heading */
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;  /* Full width for input fields */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-form .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 5px;  /* Space between checkbox and label */
+}
+
+.register-link {
+    text-align: right;
+}
+
+.register-link a {
+    color: #008080;  /* Match the teal theme */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;  /* Button stretches across */
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #004d4d;  /* Darker teal on hover */
+}
+/* --- Register Page Styling --- */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+    text-align: center;
+    color: #008080;  /* Teal theme */
+    margin-bottom: 20px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-form input:focus {
+    border-color: #008080;
+    outline: none;
+}
+
+.checkbox-container {
+    margin-bottom: 20px;
+}
+
+.checkbox-label a {
+    color: #008080;
+    text-decoration: none;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
+    width: 100%;
+    background-color: #008080;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #004d4d;  /* Darker teal */
+    cursor: pointer;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #008080;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+/* --- Cart Page Styling --- */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+    text-align: center;
+    color: #008080;  /* Teal theme */
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.cart-table input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.continue-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.continue-btn:hover {
+    background-color: #ddd;
+}
+
+.checkout-btn {
+    background-color: #008080;
+    color: white;
+}
+
+.checkout-btn:hover {
+    background-color: #004d4d;  /* Darker teal */
+}
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.billing-details, .payment-details, .order-summary {
+    flex: 1;
+    min-width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-summary li {
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #005f5f;
+}
+
+/* Cart Page Styles */
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f5f5f5;
+}
+
+.product-in-cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart-product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+}
+
+.remove-btn {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+.cart-summary {
+    text-align: right;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cart-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.continue-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.checkout-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Checkout Page Styles */
+.checkout-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.checkout-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.checkout-summary {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.checkout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.checkout-table th,
+.checkout-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.checkout-table th {
+    background-color: #f5f5f5;
+}
+
+.total-section {
+    text-align: right;
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.checkout-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.place-order-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.back-to-cart-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
