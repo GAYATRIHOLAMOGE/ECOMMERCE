@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h2 class="text-center mb-4">Your Past Orders</h2>
+
+  {% if orders %} {% for order in orders %}
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5>Order ID: {{ order.idorder }} - Placed on {{ order.timestamp }}</h5>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in order.order_items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>${{ "%.2f"|format(item.price) }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ "%.2f"|format(item.price * item.quantity) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h5 class="text-end">
+        Order Total: ${{ "%.2f"|format(order.total_amount) }}
+      </h5>
+    </div>
+  </div>
+  {% endfor %} {% else %}
+  <p class="text-center">You haven't placed any orders yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
